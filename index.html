@@ -1,40 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MAFW Distro</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-
 <style>
   @font-face {
     font-family: 'AlanisHand';
     src: url('AlanisHand.ttf') format('truetype');
   }
 
-  html, body {
-    height: 100%;
+  @font-face {
+    font-family: 'ModernTypewriter';
+    src: url('MODERN_TYPEWRITER.ttf') format('truetype');
   }
 
   body {
     background-color: #000000;
     color: #ffffff;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+    font-family: 'ModernTypewriter', 'Noto Sans', sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.5;
+    font-size: 14px;
   }
 
-  .content {
-    width: 100%;
-    max-width: 700px;
+  h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .label {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .book {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .book-cover {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ffffff;
+    flex-shrink: 0;
+  }
+
+  .book-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* BOOK TITLE SIZE*/
+  .book-line a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  .book-line a:hover {
+    text-decoration: underline;
+  }
+
+  .description {
+    color: #cccccc;
+    margin-top: 4px;
+    font-size: 0.8em;
+  }
+
+  nav {
+    margin-bottom: 30px;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.5em;
+    font-family: 'AlanisHand', 'Roboto', 'Noto Sans', sans-serif;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .announcement {
+    border: 1px solid #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 35px;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'ModernTypewriter', 'Noto Sans', sans-serif;
+    color: #ff0000;
+  }
+
+  .announcement-icon {
+    height: 1em;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .show-more-container {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .show-more-button {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    padding: 6px 16px;
+    font-size: 0.85em;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .show-more-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .horizon {
+    display: block;
+    margin: px auto 0 auto;
+    width: 50%;
   }
 
   .horizon img {
@@ -43,25 +142,67 @@
     height: auto;
   }
 
-  .coming-soon {
-    font-family: 'AlanisHand', 'Noto Sans', sans-serif;
-    font-size: 1.4em;
-    text-align: right;
-    margin-top: 10px;
+  /* Mobile adjustments */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 15px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+    }
+
+    .announcement {
+      padding: 12px 15px;
+    }
   }
 </style>
-
 </head>
 <body>
 
-<div class="content">
-  <div class="horizon">
-    <a href="https://mafwdistro.noblogs.org"><img src="horizon.png" alt="MAFW Distro"></a>
-  </div>
+<a href="index.html"><img src="horizon.png" alt="MAFW Distro" style="display:block; max-width:60%; margin-bottom:30px;"></a>
 
-  <div class="coming-soon">Coming soon...</div>
-  <a rel="me" href="https://ni.hil.ist/@mafwdistro"></a>  
-  
+<nav>
+  <a href="blog.html">Blog</a>
+  <!--<a href="zines.html">Library</a>-->
+  <!--<a href="#">Videos</a>-->
+  <a href="mafw.html">mAFW?</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ANNOUNCEMENT BOX: edit the text below to change the announcement -->
+<div class="announcement">
+  <img src="alert.png" alt="" class="announcement-icon">
+  <span>Find zines by clicking
+    <a href="https://mafwdistro.noblogs.org">here</a>.</span></span>
 </div>
+<!-- END ANNOUNCEMENT BOX -->
+
+<!--<div class="label">Latest Blog:</div>-->
+
+<!-- ======================================== -->
+<!-- LATEST BLOG POST: this is manual - update -->
+<!-- the title/link/date below whenever a new  -->
+<!-- post goes up on blog.html so it matches   -->
+<!-- whatever's newest there.                  -->
+<!-- ======================================== -->
+
+<div class="book">
+  <div class="book-info">
+    <div class="book-line"><a href="blog.html">Hello world.</a></div>
+    <div class="description">September 1, 2026</div>
+  </div>
+</div>
+
+<!-- ADD ZINES LIST HERE -->
+
+<div class="horizon">
+  <img src="bottom.png" alt="Desert horizon">
+</div>
+
+  <a rel="me" href="https://ni.hil.ist/@mafwdistro"></a>
+
 </body>
 </html>
