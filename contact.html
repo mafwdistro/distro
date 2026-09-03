@@ -64,6 +64,10 @@
     font-size: 1em;
   }
 
+  .contact-row-tight {
+    margin-bottom: 6px;
+  }
+
   .contact-icon {
     height: 1.8em;
     width: auto;
@@ -92,6 +96,28 @@
     white-space: pre-wrap;
     word-break: break-all;
     margin-top: 20px;
+  }
+
+  .copy-pgp-link {
+    color: #ffffff;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: 1em;
+  }
+
+  .copy-pgp-link:hover {
+    color: #cccccc;
+  }
+
+  .copy-feedback {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.85em;
+    color: #888888;
   }
 
   .horizon {
@@ -138,21 +164,24 @@
 <!-- an icon image and update the src below -   -->
 <!-- currently no icon file has been supplied. -->
 <!-- ======================================== -->
-<div class="contact-row">
+<div class="contact-row contact-row-tight">
 <span>Send us an email at: </span>
 <a href="mailto:mafwdistro@riseup.net" class="contact-email">mafwdistro@riseup.net</a>
 </div>
 
+<div class="contact-row">
+  <button type="button" class="copy-pgp-link" id="copy-pgp-button">Copy our PGP key by clicking here.</button>
+  <span class="copy-feedback" id="copy-pgp-feedback"></span>
+</div>
+
 <!-- ======================================== -->
 <!-- PGP PUBLIC KEY                            -->
-<!-- Paste your real key block below, replacing -->
-<!-- this placeholder, directly from your key  -->
-<!-- management tool (gpg --export --armor).   -->
-<!-- Don't retype it by hand or from an image - -->
-<!-- a single wrong character silently breaks  -->
-<!-- the key with no visual way to tell.       -->
+<!-- To update the key,                        -->
+<!-- replace the text inside the backticks     -->
+<!-- below                                     -->                    
 <!-- ======================================== -->
-<div class="pgp-key">-----BEGIN PGP PUBLIC KEY BLOCK-----
+<script>
+  const PGP_KEY_TEXT = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQENBGl4Xs8BCADTeNJtS055dd6cxO0mBGbLTxVIWZ68fnTaXlW4y+d9N//YAF/L
 LsEJHvDfMPdvjQXXj6O40ycmUzt66myLkRth3qH037xdFbvd9BxI1qRg6xLu2AGk
@@ -181,7 +210,23 @@ LBkR+DnZtBV4XpLc/m2YXO904PbNJE+RppwgiDnOgMKGtbWCndVEdU33LzaSFqrP
 izvjoj+Qpm75ljpQJKxZQOrF4B7djOl1ejKAhqeDu+dXHBmm5bcxn8MlE6cb7pYg
 LTyb1xaQlsOQN/QmZf6KdNzVYJ+6im1LFv6I5Q==
 =RYPF
------END PGP PUBLIC KEY BLOCK-----</div>
+-----END PGP PUBLIC KEY BLOCK-----`;
+
+  const copyButton = document.getElementById('copy-pgp-button');
+  const feedback = document.getElementById('copy-pgp-feedback');
+  let feedbackTimeout;
+
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(PGP_KEY_TEXT);
+      feedback.textContent = 'Copied!';
+    } catch (err) {
+      feedback.textContent = "Couldn't copy - please copy manually.";
+    }
+    clearTimeout(feedbackTimeout);
+    feedbackTimeout = setTimeout(() => { feedback.textContent = ''; }, 3000);
+  });
+</script>
 
 <br>
 <div class="horizon">
