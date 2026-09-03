@@ -106,6 +106,243 @@
     border: none;
     padding: 0;
     font-family: inherit;
+    font-size: 0.8em;
+  }
+
+  .copy-pgp-link:hover {
+    color: #cccccc;
+  }
+
+  .copy-feedback {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.85em;
+    color: #888888;
+  }
+
+  .horizon {
+    display: block;
+    margin: px auto 0 auto;
+    width: 50%;
+  }
+
+  .horizon img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 15px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html"><img src="banner.png" alt="MAFW Distro" style="display:block; max-width:25%; margin-bottom:30px;"></a>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="blog.html">Blog</a>
+  <!--<a href="zines.html">Library</a>-->
+  <!--<a href="#">Videos</a>-->
+  <a href="mafw.html">mAFW?</a>
+</nav>
+
+<!-- ======================================== -->
+<!-- FIND US ON: point the link/icon at your   -->
+<!-- fediverse (Mastodon, etc.) profile. Add   -->
+<!-- an icon image and update the src below -   -->
+<!-- currently no icon file has been supplied. -->
+<!-- ======================================== -->
+<div class="contact-row contact-row-tight">
+<span>Send us an email at: </span>
+<a href="mailto:mafwdistro@riseup.net" class="contact-email">mafwdistro@riseup.net</a>
+</div>
+
+<div class="contact-row">
+  <button type="button" class="copy-pgp-link" id="copy-pgp-button">Copy our PGP key by clicking here.</button>
+  <span class="copy-feedback" id="copy-pgp-feedback"></span>
+</div>
+
+<!-- ======================================== -->
+<!-- PGP PUBLIC KEY                            -->
+<!-- To update the key,                        -->
+<!-- replace the text inside the backticks     -->
+<!-- below                                     -->                    
+<!-- ======================================== -->
+<script>
+  const PGP_KEY_TEXT = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBGl4Xs8BCADTeNJtS055dd6cxO0mBGbLTxVIWZ68fnTaXlW4y+d9N//YAF/L
+LsEJHvDfMPdvjQXXj6O40ycmUzt66myLkRth3qH037xdFbvd9BxI1qRg6xLu2AGk
+LiPZZQYT14cc4AP29yiKblkAt6K7Yg53iu4Y4ETnqNxFeCVw+PnNtyWzp2rKox75
+eMV84UO8X/AZ+hOLfX9SjQXGMlA7iqnpnDql76H/NaMeeBlRLrBVbn4qQ79/Q7tO
+OG5Ygtc9bYLMcPyI2kEpvaWgIp+wO7eQMHl+IY4YMonozanRpIW9fiUomRjJRHeE
+dfPWF1YXhR0HDUwrFpushx9XFxkOeiLsbOl3ABEBAAG0HU1BRlcgRGlzdHJvIDxt
+YWZ3QGRpc3Ryby5vcmc+iQFRBBMBCAA7FiEEN/oFcJF5/qFnxYdWEMF9zBK4HPEF
+Aml4Xs8CGwMFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AACgkQEMF9zBK4HPEt
+EwgAqewQEopu1ht23KFuJkgEe1YG9a6+KPQsk/8eYg856bdSmPQO3sWpDQdT5uAn
+OPgWEed3IVOu/yQymyvgLbOuM+xDas4A3CoiFGPERYu51Smeh8ErQzlX26+AVq3I
+IjSeJjdoXOlHVD3SwJjTLf9wyI+iUpDLhDR76jUztm5dmoZGBeCc2Hho52sNA0qj
+pOA50TEGRbBEWPjO69jI4JyxTitSX+1KdCPx1boJJ05p4WQaCO2blPBGZ1Apl+bZ
+47zCQQDYHXMVLQnv+K8M+/C3exUEoqB2GuvHKQVPb0hYbfkGghSA2Y+rssido5ZY
+U7+mxra3p0gOpcUuslyTgjgPzbkBDQRpeF7PAQgA3ElgW7rAts/uVakdYd4zIC0F
+47AfJZRwsudGO6SaQQmDQG3vSZId+/pTp9D198pR2pd3sLCAE+Bw0rzxE9MnyuEA
+e9R7iyOTOh/C/O3ubznNZ8CAQ0mMwq/ZPIUlK8aF8BELwds9i38FLvevqzYUZ+lL
+ANXAlbmIAFSECS9f0j8Dm3/XCuJCi5WQdxW8TKoc2paSgZ04FZuBkqUG6dznkeGz
+TjnlPyLfCqr2PMf1yjU/xFD9cd7i14w6th5tUjiWW6NHmrXN9MNBV714VpBn8Pr6
+z0IEUNpzvRCOsUuoSCViHZtOfBp6kaivdJBmtKKhi96ym1IyleU42HAIS8K/5wAR
+AQABiQE2BBgBCAAgFiEEN/oFcJF5/qFnxYdWEMF9zBK4HPEFAml4Xs8CGwwACgkQ
+EMF9zBK4HPF1OQgA0ZLc4nDMuFLbXk5DqlNAbiSSJPah3l1j9AVwRqVNj4tQgWj3
+o+EtuCo5Gl0U7d5rqkfxnvysSgbWEKorDeMNdR8ado199UTBTDL2cH6OXv3g591A
+a0i5uelwQ3EOvEDbtsE1G+QVjn/r7E3x3Nkz7qaxMHaJ3xe+cxmy5LLnOUeGC8f2
+LBkR+DnZtBV4XpLc/m2YXO904PbNJE+RppwgiDnOgMKGtbWCndVEdU33LzaSFqrP
+izvjoj+Qpm75ljpQJKxZQOrF4B7djOl1ejKAhqeDu+dXHBmm5bcxn8MlE6cb7pYg
+LTyb1xaQlsOQN/QmZf6KdNzVYJ+6im1LFv6I5Q==
+=RYPF
+-----END PGP PUBLIC KEY BLOCK-----`;
+
+  const copyButton = document.getElementById('copy-pgp-button');
+  const feedback = document.getElementById('copy-pgp-feedback');
+  let feedbackTimeout;
+
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(PGP_KEY_TEXT);
+      feedback.textContent = 'Copied!';
+    } catch (err) {
+      feedback.textContent = "Couldn't copy - please copy manually.";
+    }
+    clearTimeout(feedbackTimeout);
+    feedbackTimeout = setTimeout(() => { feedback.textContent = ''; }, 3000);
+  });
+</script>
+
+<br>
+<div class="horizon">
+  <img src="bottom.png" alt="Desert horizon">
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  @font-face {
+    font-family: 'AlanisHand';
+    src: url('AlanisHand.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'ModernTypewriter';
+    src: url('MODERN_TYPEWRITER.ttf') format('truetype');
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'ModernTypewriter', 'Noto Sans', sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'ModernTypewriter', 'Roboto', 'Noto Sans', sans-serif;
+  }
+
+  nav {
+    margin-bottom: 30px;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.5em;
+    font-family: 'AlanisHand', 'Roboto', 'Noto Sans', sans-serif;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    font-size: 1em;
+  }
+
+  .contact-row-tight {
+    margin-bottom: 6px;
+  }
+
+  .contact-icon {
+    height: 1.8em;
+    width: auto;
+  }
+
+  .contact-link {
+    color: #ffffff;
+  }
+
+  .contact-email {
+    font-family: 'ModernTypewriter', 'Noto Sans', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .contact-email:hover {
+    text-decoration: underline;
+  }
+
+  .pgp-key {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75em;
+    line-height: 1.4;
+    color: #ffffff;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin-top: 20px;
+  }
+
+  .copy-pgp-link {
+    color: #ffffff;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
     font-size: 1em;
   }
 
