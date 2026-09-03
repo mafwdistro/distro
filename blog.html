@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  @font-face {
+    font-family: 'AlanisHand';
+    src: url('AlanisHand.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'ModernTypewriter';
+    src: url('MODERN_TYPEWRITER.ttf') format('truetype');
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'ModernTypewriter', 'Noto Sans', sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'ModernTypewriter', 'Roboto', 'Noto Sans', sans-serif;
+  }
+
+  nav {
+    margin-bottom: 30px;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.5em;
+    font-family: 'AlanisHand', 'Roboto', 'Noto Sans', sans-serif;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .post {
+    margin-bottom: 35px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #333333;
+  }
+
+  .post:last-of-type {
+    border-bottom: none;
+  }
+
+  .post-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .post-date {
+    color: #888888;
+    font-size: 0.85em;
+    margin-bottom: 14px;
+  }
+
+  .post-text p {
+    margin: 0 0 14px 0;
+  }
+
+  .post-text p:last-child {
+    margin-bottom: 0;
+  }
+
+
+  .horizon {
+    display: block;
+    margin: px auto 0 auto;
+    width: 50%;
+  }
+
+  .horizon img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 15px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html"><img src="banner.png" alt="MAFW Distro" style="display:block; max-width:25%; margin-bottom:30px;"></a>
+
+<nav>
+  <a href="index.html">Home</a>
+  <!--<a href="zines.html">Library</a>-->
+  <!--<a href="#">Videos</a>-->
+  <a href="mafw.html">mAFW?</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!--<h2>Blog...</h2>
+
+<!-- ======================================== -->
+<!-- BLOG POSTS: copy one "BLOG POST START"    -->
+<!-- block (including start/end comments) to   -->
+<!-- add a new post. Paste new posts at the    -->
+<!-- TOP of the list - newest first. Each      -->
+<!-- paragraph inside .post-text is its own    -->
+<!-- <p> tag.                                  -->
+<!-- ======================================== -->
+
+<!-- BLOG POST START -->
+<div class="post">
+  <div class="post-title">Hello world.</div>
+  <div class="post-date">September 1, 2026</div>
+  <div class="post-text">
+    <p>We stand in solidarity with A/I.
+    <br>We are NOT shutting down our Noblogs.
+    <br>We are using this site as a supplement and backup.</p>
+    <p>Zines can still be found at our Noblogs site.</p>
+  </div>
+</div>
+<!-- BLOG POST END -->
+
+<div class="horizon">
+  <img src="bottom.png" alt="Desert horizon">
+</div>
+
+</body>
+</html>
