@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuclear (is a) Waste - Zine</title>
+<style>
+  @font-face {
+    font-family: 'AlanisHand';
+    src: url('alanis_hand.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'ModernTypewriter';
+    src: url('modern_typewriter.ttf') format('truetype');
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'ModernTypewriter', 'Noto Sans', sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  nav {
+    margin-bottom: 30px;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.65em;
+    font-family: 'AlanisHand', 'Roboto', 'Noto Sans', sans-serif;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .detail {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+  }
+
+  .detail-cover {
+    width: 220px;
+    height: 290px;
+    object-fit: cover;
+    border: 1px solid #ffffff;
+    flex-shrink: 0;
+  }
+
+  .detail-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .detail-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+  }
+
+  .detail-description {
+    color: #cccccc;
+    font-size: 0.85em;
+    margin-bottom: 16px;
+  }
+
+  .detail-tags {
+    color: #888888;
+    font-size: 0.75em;
+    margin-bottom: 22px;
+  }
+
+  .download-button {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    padding: 6px 16px;
+    font-size: 0.85em;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .download-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .zine-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .zine-nav a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    padding: 6px 16px;
+    font-size: 0.85em;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .zine-nav a:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .horizon {
+    display: block;
+    margin: px auto 0 auto;
+    width: 42.5%;
+  }
+
+  .horizon img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 15px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 8px;
+    }
+
+    .detail {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .detail-cover {
+      width: 60%;
+      height: auto;
+    }
+
+    .zine-nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .zine-nav a {
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="index_live.html"><img src="banner.png" alt="MAFW Distro" style="display:block; max-width:25%; margin-bottom:30px;"></a>
+
+<nav>
+  <a href="index_live.html">Home</a>
+  <!--<a href="#">Videos</a>-->
+  <a href="mafw.html">MAFW?</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ZINE DETAIL -->
+
+<div class="detail">
+  <img class="detail-cover" src="niaw_cover.png" alt="Nuclear (is a) Waste cover">
+  <div class="detail-info">
+    <div class="detail-title">Nuclear (is a) Waste</div>
+    <div class="detail-description">A Critical look at the Nuclear Industry of the Southwest "USA"</div>
+        <div class="detail-description">Table of Contents:<br>Preface | The Atomic Age: Research & Destruction | Down the Yellowcake Road | A New Type of Disaster | Radioactive Greenwashing | Uranium on Wheels | An Anti-Life System | Data, Power, & The Future of Nuclear | Stopping Them | Anti-Nuclear Groups, General Sources, & Additional Reading</div>
+    <div class="detail-tags">Tags: Eco, Southwest</div>
+    <a class="download-button" href="https://mega.nz/file/OgkgXRrY#ArL8l7dFbe_aohM0u6SjB1HOgIFBAMQM9_-7lTDM0F4">Download</a>
+  </div>
+</div>
+
+<!-- PREV / NEXT 
+
+<div class="zine-nav">
+  <a href="zine.html">&larr; Previous</a>
+  <a href="zine.html">Next &rarr;</a>
+</div>
+
+-->
+
+<div class="horizon">
+  <img src="bottom.png" alt="Desert horizon">
+</div>
+
+</body>
+</html>
